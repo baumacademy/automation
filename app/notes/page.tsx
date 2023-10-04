@@ -4,12 +4,13 @@ import styles from './Notes.module.css';
 import CreateNote from './CreateNote';
 import { baseUrl } from '../_utils/utils'
 
-// export const dynamic = 'auto',
-//   dynamicParams = true,
-//   revalidate = 0,
-//   fetchCache = 'auto',
-//   runtime = 'nodejs',
-//   preferredRegion = 'auto'
+export const dynamic = 'auto'
+export const dynamicParams = true
+export const revalidate = false
+export const fetchCache = 'auto'
+export const runtime = 'nodejs'
+export const preferredRegion = 'auto'
+export const maxDuration = 5
 
 
 const getNotes = async () => {
@@ -24,8 +25,6 @@ const getNotes = async () => {
 
 export default async function NotesPage() {
   const notes = await getNotes();
-
-  console.log('env', process.env.NODE_ENV)
 
   return(
     <div>
