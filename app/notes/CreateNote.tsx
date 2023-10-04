@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { baseUrl } from '../_utils/utils'
 
 export const CreateNote = () => {
   const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ export const CreateNote = () => {
 
   const create = async() => {
 
-    await fetch('http://127.0.0.1:8090/api/collections/notes/records', {
+    await fetch(`${baseUrl}/api/collections/notes/records`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

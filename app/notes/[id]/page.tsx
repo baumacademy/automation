@@ -1,8 +1,9 @@
 import styles from '../Notes.module.css';
+import { baseUrl } from '../../_utils/utils'
 
 const getNote = async (noteId: string) => {
   const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/notes/records/${noteId}`,
+    `${baseUrl}/api/collections/notes/records/${noteId}`,
     {
       next: { revalidate: 10 },
     }
